@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background-primary: #fcfaf7;
+  --color-foreground-primary: #1d1d1d;
+  --color-accent-amber: #d97706;
+  --color-sidebar-primary: #f3f0e9;
+}
+
+/* Tailwind v4 dark mode variant */
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #fcfaf7;
+  --foreground: #1d1d1d;
+  --accent: #d97706;
+  --sidebar: #f3f0e9;
+  --border: #e5e7eb;
+}
+
+.dark {
+  --background: #111111;
+  --foreground: #ededed;
+  --sidebar: #1a1a1a;
+  --border: #2e2e2e;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow: hidden; /* Prevent body scroll, use container scroll */
+}
+
+/* Custom scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.05);
+  border-radius: 10px;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.05);
+}
+
+.prose {
+  max-width: none;
+}
+
+.prose p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
